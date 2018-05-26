@@ -7,7 +7,7 @@ app.controller("myCtrl", function($scope, $http, $window) {
 	
 	// Variables
 	$scope.cities = [];
-	$scope.len = 5; // Inserted due future feature of "expand list". didn't have the time to implement.
+	$scope.len = 4; // Inserted due future feature of "expand list". didn't have the time to implement.
 	
 	// Functions and CB
 	$window.map = new google.maps.Map(document.getElementById('googleMap'), {
