@@ -7,10 +7,9 @@ app.controller("myCtrl", function($scope, $http, $window) {
 	
 	// Variables
 	$scope.cities = [];
-	$scope.len = 5;
+	$scope.len = 5; // Inserted due future feature of "expand list". didn't have the time to implement.
 	
 	// Functions and CB
-	
 	$window.map = new google.maps.Map(document.getElementById('googleMap'), {
         center: {
             lat: 32.0717321,
@@ -34,12 +33,12 @@ app.controller("myCtrl", function($scope, $http, $window) {
 		API_ID_KEY = "d030420a7eb8a7a56c796265c22204db";
 		
 		
-		$http.get(API_URL_CONST + "&lat=" +lat + "&lon=" + lon + "&cnt=20&appid=" + API_ID_KEY)
+		$http.get(API_URL_CONST + "&lat=" +lat + "&lon=" + lon + "&cnt=5&appid=" + API_ID_KEY)
 			.then(function successCallback(response) {
 					$scope.cities = response.data.list;
 					$scope.transformDatainDB();
 				}, function errorCallback(response){
-					$scope.cities = [{"name" : response.data.message}]; // should rethink later?
+					$scope.cities = [{"name" : response.data.message}]; 
 				}
 			);
 	}
@@ -65,6 +64,8 @@ app.controller("myCtrl", function($scope, $http, $window) {
 	{
 		object.dist = Math.abs(object.feel - $scope.TEMPERATURE_CONST);
 	}
+	
+	//Init executaion code
 	$scope.updateResults();
 });
 
