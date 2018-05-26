@@ -13,7 +13,7 @@
 			</header>
 			<div id="googleMap" style="width:100%;height:400px;"></div>
 			<ul class="ul">
-				<li ng-repeat="x in cities|orderBy: ['dist', 'name']" class="padding-16">{{x.name}}, Feels like:{{x.feel}}&deg;,
+				<li ng-repeat="x in cities | limitTo:3 |orderBy: ['dist', 'name']" class="padding-16">{{x.name}}, Feels like:{{x.feel}}&deg;,
 					<span class="li-font">Temperature:{{x.main.temp}}&deg;, Humidity:{{x.main.humidity}}%</span></li>
 			</ul>
 		</div>
