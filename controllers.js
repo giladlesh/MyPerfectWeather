@@ -29,7 +29,7 @@ app.controller("myCtrl", function($scope, $http, $window) {
     });
 	
 	$scope.getDataFromOWDB = function (lat,lon) {
-		API_URL_CONST = "http://api.openweathermap.org/data/2.5/find?units=metric";
+		API_URL_CONST = "https://api.openweathermap.org/data/2.5/find?units=metric";
 		API_ID_KEY = "d030420a7eb8a7a56c796265c22204db";
 		
 		
