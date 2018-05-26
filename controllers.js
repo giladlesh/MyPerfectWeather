@@ -7,6 +7,7 @@ app.controller("myCtrl", function($scope, $http, $window) {
 	
 	// Variables
 	$scope.cities = [];
+	$scope.len = 5;
 	
 	// Functions and CB
 	
